@@ -16,7 +16,7 @@ test.describe('Validación Blog', () =>  {
     })
 
     //CP006
-     test.only('Test buscar en blog', async () => { 
+     test('Test buscar en blog', async () => { 
     await blog.clickBlog();
     await blog.buscarenBlog('tester');
     await blog.verificarBúsquedaBlog('tester');
