@@ -27,7 +27,17 @@ export class HomePage {
         await this.clickYoutube();
         const youtubePage = await popupPromise;
         await expect(youtubePage).toHaveURL(/youtube\.com/);
-}
+    }
+
+     async clickIdioma(){
+        await this.page.getByRole('button', { name: '🇪🇸 ES' }).click();
+
+    }
+
+    async verificarcambioIdioma(){
+        await expect(this.page.getByRole('heading', { name: 'Quality is not negotiated. It' })).toBeVisible();
+    }
+
     
 
 

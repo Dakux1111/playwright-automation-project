@@ -5,7 +5,7 @@ import { Cookies } from '../src/components/cookiesModal/cookies'
 import { navBar } from '../src/components/navbar/navbar';
 import  users from '../src/test-data/users.json';
 
-test.describe('Validación Certificados', () => {
+test.describe('Validación Panel', () => {
 let login: LoginPage
 let dashboard: DashboardPage;
 let menu: navBar;
@@ -22,16 +22,14 @@ test.beforeEach( async({page}) => {
     
 })
 
-test('Ver mis certificados', async ({ page }) => {
+//CP005
+test('Ver mi panel', async ({ page }) => {
     await login.loginUser(users.StudentUser.email,users.StudentUser.password)
-    await dashboard.clickCertificates();
-    await dashboard.verifyCertificatesPage();
+    await dashboard.clickPanel();
+    await dashboard.verificarPanel();
 });
 
 
 
 });
-
-
-
 

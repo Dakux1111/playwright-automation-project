@@ -2,7 +2,7 @@ import { test } from '@playwright/test';
 import { Cookies } from '../src/components/cookiesModal/cookies'
 import { HomePage } from '../src/pages/home.page';
 
-//CASO DE PRUEBA CREADA: CP002, CP003, CP004
+//CASO DE PRUEBA ASIGNACIÓN: 
 test.describe('Validación Home', () =>  {
 
     let home: HomePage;
@@ -12,19 +12,28 @@ test.describe('Validación Home', () =>  {
         home = new HomePage(page);
         await page.goto('');
     })
+
+    //CP002
     test('Test ir a Política de Privacidad', async () => { 
     await home.clickPoliticaPrivacidad();
     await home.verPoliticaPrivacidad();
     });
 
-      test.only('Test Ir a Youtube', async () => { 
-    await home.verYoutube();
+    //CP003
+      test('Test Ir a Youtube', async () => { 
+      await home.verYoutube();
     //await dashboard.isAdminPanel();
     });
-     //  test('Test Cambiar de Idioma', async () => { 
-    //await login.loginUser(users.adminUser.email,users.adminUser.password)
-    //await dashboard.isAdminPanel();
-    //});
+
+    //CP004
+      test('Test Cambiar de Idioma', async () => { 
+      await home.clickIdioma();  
+      await home.verificarcambioIdioma();
+    });
+
+      
+  
+
 
   
 

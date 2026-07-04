@@ -23,5 +23,22 @@ export class DashboardPage {
         await expect(this.page.getByRole('heading', { name: 'Mi Panel' })).toBeVisible();
     }
 
+    async clickCertificates() {
+        await this.page.getByTestId('nav-certificates').click();
+    }
 
+    async verifyCertificatesPage() {
+        await expect(this.page.getByRole('heading', { name: 'Mis Certificados' })).toBeVisible();
+
+    }
+ 
+    async clickPanel() {
+     await this.page.getByTestId('nav-dashboard').click();
+    }
+
+    async verificarPanel() {
+    await expect(this.page.getByRole('heading', { name: 'Mi Panel' })).toBeVisible();
+}
+
+    
 }
