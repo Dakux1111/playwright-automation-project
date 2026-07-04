@@ -22,6 +22,7 @@ test.beforeEach( async({page}) => {
     
 })
 
+//CP007
 test('Ver mis certificados', async ({ page }) => {
     await login.loginUser(users.StudentUser.email,users.StudentUser.password)
     await dashboard.clickCertificates();
